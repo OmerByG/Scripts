@@ -1,1 +1,30 @@
+local Library,Themes = loadstring(game:HttpGet("https://raw.githubusercontent.com/trinyxScripts/nexus-ui/refs/heads/main/nexuslib.lua"))()
+local main = Library:new{
+	Name = "Grow a Garden",
+	Style = "Classic",
+	Theme = "Dark",
+	KeySystemConfig = {
+		KeySystem = false,
+	},
+}
 
+local mainTab = main:CreateTab({Icon = "app-window",Text = "Main"})
+
+local autofarmIpt = mainTab:TextInput({
+	PlaceHolderText = "Seed Name",
+	Title = "Select Seed",
+	CallBack = function (v)
+	    print(v)
+	end
+})
+
+local autofarmTg = mainTab:Toggle({
+        Name = "Auto Farm",
+        State = false,
+        callback = function (v)
+            while v == true do
+				print("sa")
+				wait(1)
+			end
+        end
+})
